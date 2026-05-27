@@ -31,7 +31,7 @@
 		onclick={() => pwa.closeIosHelp()}
 	></button>
 	<div class="ios-sheet" role="dialog" aria-label="Instrucciones de instalación">
-		<h3>Añadir WM Tips a tu pantalla de inicio</h3>
+		<h3>Añadir AudiMundial a tu pantalla de inicio</h3>
 		<ol>
 			<li>
 				Toca el botón <span class="kbd"><Share size={14} /> Compartir</span> en la barra de herramientas de Safari.

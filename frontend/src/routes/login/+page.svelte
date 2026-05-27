@@ -47,6 +47,7 @@
 </script>
 
 <div class="auth">
+	<img class="brand-logo" src="/logos/audired-logo.png" alt="AudiRed" />
 	<h1>AudiMundial 2026</h1>
 	<p class="muted">Pronosticá el Mundial. Ganale a tus amigos.</p>
 
@@ -231,5 +232,11 @@
 	.center {
 		text-align: center;
 		margin-top: 1.5rem;
+	}
+  .brand-logo {
+		display: block;
+		margin: 0 auto 1rem;
+		height: 80px;
+		width: auto;
 	}
 </style>

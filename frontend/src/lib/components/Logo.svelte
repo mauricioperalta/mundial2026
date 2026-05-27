@@ -3,7 +3,7 @@
 </script>
 
 <a class="logo" href="/" aria-label="AudiRed Mundial home">
-	<img class="mark" src="https://audired.com.ar/logos/principal2.png" alt="AudiRed logo" />
+	<img class="mark" src="/logos/audired-logo.png" alt="AudiRed logo" />
 	{#if !compact}<span class="word">Mundial&nbsp;2026</span>{/if}
 </a>
 
