@@ -7,6 +7,7 @@
 	let password = $state('');
 	let error = $state('');
 	let busy = $state(false);
+	let showTerms = $state(false);
 
 	// Después de iniciar sesión, reanudar una invitación si venía en la URL.
 	let invite = $derived($page.url.searchParams.get('invite'));
@@ -95,7 +96,29 @@
 	<p class="small muted center">
 		¿No tenés una cuenta? <a href={registerHref} class="forgot">Registrate acá</a>
 	</p>
+	<p class="small muted center"><button class="link-btn" onclick={() => (showTerms = !showTerms)}>Ver términos y condiciones</button></p>
 </div>
+
+{#if showTerms}
+<div class="overlay" onclick={() => (showTerms = false)}>
+	<div class="modal" onclick={(e) => e.stopPropagation()}>
+		<h2>Términos y condiciones de uso</h2>
+		<h3>AudiMundial 2026</h3>
+		<div class="body">
+			<p><strong>1. Participantes elegibles</strong><br/>Pueden participar todos los colaboradores y contratados de AudiRed. Solo serán elegibles para premios quienes obtengan las máximas puntuaciones al finalizar el torneo.</p>
+			<p><strong>2. Múltiples cuentas</strong><br/>Un mismo participante puede registrarse con más de una cuenta para seguir diferentes estrategias. La organización no se responsabiliza por confusiones derivadas del uso de múltiples cuentas.</p>
+			<p><strong>3. Acceso a la plataforma</strong><br/>La aplicación es accesible desde dentro y fuera de la red corporativa, y desde cualquier dispositivo. El participante es responsable de la seguridad de sus credenciales.</p>
+			<p><strong>4. Conducta</strong><br/>La organización se reserva el derecho de suspender o eliminar la cuenta de cualquier participante que incurra en conductas inapropiadas, sin previo aviso y sin derecho a reclamo.</p>
+			<p><strong>5. Disponibilidad del servicio</strong><br/>La organización no garantiza la disponibilidad continua de la plataforma. Interrupciones técnicas no darán lugar a reclamos.</p>
+			<p><strong>6. Resultados y puntuación</strong><br/>Los resultados provienen de fuentes externas. La organización no se responsabiliza por errores o demoras en la actualización.</p>
+			<p><strong>7. Premios</strong><br/>Los premios serán comunicados con anticipación. La organización se reserva el derecho de modificarlos por causas de fuerza mayor.</p>
+			<p><strong>8. Privacidad</strong><br/>Los datos personales serán utilizados exclusivamente para el funcionamiento del juego y no serán compartidos con terceros.</p>
+			<p><strong>9. Aceptación</strong><br/>La participación en AudiMundial 2026 implica la aceptación plena de estos términos y condiciones.</p>
+		</div>
+		<button class="btn" onclick={() => (showTerms = false)}>Cerrar</button>
+	</div>
+</div>
+{/if}
 
 <style>
 	/* Importamos Roboto para el cumplimiento estricto de la marca del botón de Google */
@@ -239,4 +262,130 @@
 		height: 80px;
 		width: auto;
 	}
+
+	.small { font-size: 0.85rem; }
+	.link-btn {
+		background: none;
+		border: none;
+		color: var(--accent);
+		cursor: pointer;
+		font: inherit;
+		font-size: 0.85rem;
+		padding: 0;
+		text-decoration: underline;
+	}
+	.overlay {
+		position: fixed;
+		inset: 0;
+		background: rgba(0,0,0,0.85);
+		z-index: 9999;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 1rem;
+	}
+	.modal {
+		background: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
+		padding: 2rem;
+		max-width: 560px;
+		width: 100%;
+		max-height: 90dvh;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+	.modal h2 {
+		margin: 0;
+		text-align: center;
+		font-size: 1rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: var(--accent);
+	}
+	.modal h3 {
+		margin: 0;
+		text-align: center;
+		font-size: 0.85rem;
+		color: var(--muted);
+		text-transform: uppercase;
+	}
+	.body {
+		overflow-y: auto;
+		flex: 1;
+		font-size: 0.85rem;
+		line-height: 1.6;
+		color: var(--muted);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-sm);
+		padding: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+	.body p { margin: 0; }
+
+	.small { font-size: 0.85rem; }
+	.link-btn {
+		background: none;
+		border: none;
+		color: var(--accent);
+		cursor: pointer;
+		font: inherit;
+		font-size: 0.85rem;
+		padding: 0;
+		text-decoration: underline;
+	}
+	.overlay {
+		position: fixed;
+		inset: 0;
+		background: rgba(0,0,0,0.85);
+		z-index: 9999;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 1rem;
+	}
+	.modal {
+		background: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
+		padding: 2rem;
+		max-width: 560px;
+		width: 100%;
+		max-height: 90dvh;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+	.modal h2 {
+		margin: 0;
+		text-align: center;
+		font-size: 1rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: var(--accent);
+	}
+	.modal h3 {
+		margin: 0;
+		text-align: center;
+		font-size: 0.85rem;
+		color: var(--muted);
+		text-transform: uppercase;
+	}
+	.body {
+		overflow-y: auto;
+		flex: 1;
+		font-size: 0.85rem;
+		line-height: 1.6;
+		color: var(--muted);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-sm);
+		padding: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+	.body p { margin: 0; }
 </style>

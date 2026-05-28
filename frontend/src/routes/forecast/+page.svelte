@@ -120,9 +120,9 @@
 	</div>
 	{#if fs.loaded}
 		<div class="seg">
-			<button class:on={section === 'groups'} onclick={() => (section = 'groups')}>Grupos</button>
-			<button class:on={section === 'thirds'} onclick={() => (section = 'thirds')}>Mejores terceros</button>
-			<button class:on={section === 'bracket'} onclick={() => (section = 'bracket')}>Cuadro</button>
+			<button class:on={section === 'groups'} onclick={() => (section = 'groups')}>Tus Grupos</button>
+			<button class:on={section === 'thirds'} onclick={() => (section = 'thirds')}>Tus Mejores Terceros</button>
+			<button class:on={section === 'bracket'} onclick={() => (section = 'bracket')}>Tu Eliminatoria</button>
 		</div>
 	{/if}
 </div>

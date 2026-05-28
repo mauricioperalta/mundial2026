@@ -144,7 +144,7 @@
 	<div class="sh-expand"><div class="sh-inner"><h1>El Torneo</h1></div></div>
 	<div class="seg">
 		<button class:on={view === 'groups'} onclick={() => (view = 'groups')}>Tablas de grupos</button>
-		<button class:on={view === 'bracket'} onclick={() => (view = 'bracket')}>Cuadro</button>
+		<button class:on={view === 'bracket'} onclick={() => (view = 'bracket')}>Eliminatorias</button>
 	</div>
 </div>
 

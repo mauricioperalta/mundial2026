@@ -180,7 +180,7 @@
 			{:else if locked}
 				<span class="pill"><Lock size={12} /> locked</span>
 			{:else if existing}
-				<span class="pill ok"><Check size={12} /> tipped</span>
+				<span class="pill ok"><Check size={12} /> Pronosticado</span>
 			{/if}
 			<ChevronDown size={16} class="cv {open ? 'up' : ''}" />
 		</div>

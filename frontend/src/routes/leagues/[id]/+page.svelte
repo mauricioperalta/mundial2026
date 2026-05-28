@@ -238,6 +238,33 @@
 		</p>
 	</section>
 
+{#if cfg}
+		<details class="card legend">
+			<summary>¿Cómo se juega?</summary>
+
+			<p class="muted small">¡Bienvenido/a al desafío de predicciones de la empresa! Para participar y sumar puntos en AudiMundial, debés completar dos secciones distintas con mecánicas y reglas de cierre diferentes.</p>
+
+			<p class="muted small"><b>1. Pronóstico: El desafío partido a partido</b><br/>El Pronóstico se refiere a las apuestas individuales que realizás para cada uno de los 104 encuentros del Mundial.</p>
+			<ul class="guide-list">
+				<li><span><b>Qué elegís:</b> El marcador exacto de cada encuentro (ej. España 2 - 0 Japón). En fase de eliminación, el sistema te permite elegir quién avanza de ronda (considerando tiempo extra y penales).</span></li>
+				<li><span><b>Puntuación:</b> Sumás puntos por acertar al ganador, el marcador exacto, la diferencia de goles y la cantidad total de tantos.</span></li>
+				<li><span><b>Tiempo Límite:</b> Cada partido es independiente. Podés cargar o editar el marcador hasta el pitazo inicial (Kick-off). Una vez que el partido comienza, el sistema bloquea la edición.</span></li>
+				<li><span><b>Forma de Guardado:</b> Los resultados se guardan automáticamente. Cada vez que escribís un número, el sistema sincroniza ese dato con el servidor. Verás un indicador visual confirmando el registro.</span></li>
+			</ul>
+
+			<p class="muted small"><b>2. Predicción: Tu visión del torneo (Simulador)</b><br/>La Predicción es una configuración única y global de cómo creés que terminará el cuadro general del Mundial. Funciona como un simulador inteligente.</p>
+			<ul class="guide-list">
+				<li><span><b>Cómo se completa:</b> Solo definís las posiciones de la Fase de Grupos y los mejores terceros (solo podés elegir 8). A partir de ahí, el sistema arma automáticamente los cruces de la Ronda de 32. Luego debés seleccionar quién gana cada encuentro de la Ronda 32, Octavos, Cuartos, Semis y la Final hasta elegir a tu campeón.</span></li>
+				<li><span><b>Efecto Cascada:</b> Al elegir al ganador de una llave, el sistema lo posiciona automáticamente en la siguiente etapa del cuadro.</span></li>
+				<li><span><b>Tiempo Límite:</b> Tenés tiempo hasta el minuto exacto en que comience el partido inaugural del Mundial. Una vez que comience el primer partido, la Predicción se bloquea definitivamente.</span></li>
+				<li><span><b>Forma de Guardado:</b> Cada clic en una llave o cada posición que cambiás en los grupos se envía al servidor al instante. Es vital revisar que todo el camino hasta la final esté completo antes del inicio del torneo.</span></li>
+				<li><span><b>⚠ Advertencia de Cambios en Cadena:</b> Si modificás una posición en la Fase de Grupos después de haber completado todo tu cuadro, el sistema recalculará automáticamente todos los cruces posteriores. ¡Revisá siempre todo tu camino si hacés un cambio de último momento!</span></li>
+			</ul>
+
+			<p class="muted small"><b>Nota final:</b> Asegurate de tener una conexión estable a internet al momento de realizar tus elecciones. ¡Mucha suerte en AudiMundial!</p>
+		</details>
+	{/if}
+
 	{#if cfg}
 		<details class="card legend">
 			<summary>¿Cómo se calculan los puntos?</summary>
@@ -290,6 +317,7 @@
 			</ol>
 		</details>
 	{/if}
+
 {/if}
 
 <style>
@@ -513,6 +541,22 @@
 		margin: 0.5rem 0 0;
 		padding-left: 1.3rem;
 		line-height: 1.8;
+	}
+	ul.guide-list {
+		list-style: disc;
+		padding-left: 1.2rem;
+	}
+	ul.guide-list li {
+		display: list-item;
+		border-bottom: none;
+		padding: 0.25rem 0;
+		font-size: 0.85rem;
+		color: var(--muted);
+	}
+	ul.guide-list li b {
+		color: var(--text);
+		font-family: inherit;
+		font-size: 0.85rem;
 	}
 	ol.tiebreak li {
 		padding-left: 0.3rem;

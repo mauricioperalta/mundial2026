@@ -11,7 +11,7 @@ export const navItems: NavItem[] = [
 	{ href: '/', label: 'Inicio', icon: House },
 	{ href: '/tips', label: 'Pronósticos', icon: Volleyball },
 	{ href: '/forecast', label: 'Predicción', icon: Telescope },
-	{ href: '/tournament', label: 'Cuadro', icon: Network },
+	{ href: '/tournament', label: 'El Torneo', icon: Network },
 	{ href: '/leagues', label: 'Ligas', icon: Trophy }
 ];
 

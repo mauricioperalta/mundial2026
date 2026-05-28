@@ -86,6 +86,16 @@
 			busy = false;
 		}
 	}
+
+	let inviteEmailVal = $state('');
+	function doInvite() {
+		if (!inviteEmailVal.trim()) return;
+		const nombre = auth.user?.name ?? 'Un amigo';
+		const s = encodeURIComponent(nombre + ' te invita a jugar AudiMundial 2026');
+		const b = encodeURIComponent('Hola,\n\n' + nombre + ' te invita a participar de AudiMundial 2026 — el juego de pronósticos del Mundial.\n\nRegistrate acá: https://audimundial.audired.com.ar/register\n\n¡Buena suerte!\n\n---\nEste mensaje fue enviado por ' + nombre + ' (' + (auth.user?.email ?? '') + ') desde AudiMundial.');
+		window.location.href = 'mailto:' + inviteEmailVal.trim() + '?subject=' + s + '&body=' + b;
+		inviteEmailVal = '';
+	}
 </script>
 
 <div class="settings">
@@ -155,6 +165,16 @@
 		>
 			{resetBusy ? 'Enviando…' : resetSent ? 'Enviado' : 'Enviar enlace de recuperación'}
 		</button>
+	</section>
+
+	<section class="card">
+		<h3>Invitar a un amigo</h3>
+		<p class="muted small">Ingresá el email de la persona que querés invitar a jugar AudiMundial 2026.</p>
+		<div class="field">
+			<label for="invite-email">Email del invitado</label>
+			<input id="invite-email" class="input" type="email" placeholder="amigo@email.com" bind:value={inviteEmailVal} />
+		</div>
+		<button class="btn" onclick={doInvite}>Enviar invitación</button>
 	</section>
 
 	<p class="muted switch"><a href="/">Volver</a></p>
