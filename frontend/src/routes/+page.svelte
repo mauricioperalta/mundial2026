@@ -17,22 +17,22 @@
 
 	const moves = [
 		{
-			href: '/forecast',
-			icon: Telescope,
-			title: 'Completá tu Predicción Inicial',
-			sub: 'Tu pronóstico del torneo completo — antes del primer partido'
-		},
-		{
 			href: '/tips',
 			icon: Volleyball,
 			title: 'Pronosticá los próximos partidos',
 			sub: 'Predicciones de resultado, editables hasta el pitazo'
 		},
 		{
+			href: '/forecast',
+			icon: Telescope,
+			title: 'Completá tu Predicción Inicial',
+			sub: 'Tu pronóstico del torneo completo — antes del primer partido'
+		},
+		{
 			href: '/leagues',
 			icon: Trophy,
-			title: 'Creá o unite a una Liga',
-			sub: 'Jugá contra tus amigos'
+			title: 'Mirá las posiciones de los participantes',
+			sub: 'También podés revisar sus predicciones'
 		}
 	];
 </script>
