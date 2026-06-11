@@ -23,21 +23,26 @@
 		},
 		{
 			q: '¿Cómo se calculan los puntos?',
-			a: `<p><b>Por partido (Pronóstico):</b></p>
+			a: `<p><b>Por partido (Pronóstico) — máximo 6 pts:</b></p>
 			<ul>
-				<li><b>Resultado correcto</b> (ganador o empate en grupos): puntos base</li>
-				<li><b>Resultado exacto:</b> puntos adicionales</li>
-				<li><b>Total de goles correcto:</b> puntos adicionales</li>
-				<li><b>Diferencia de goles correcta:</b> puntos adicionales</li>
+				<li><b>Resultado correcto</b> (ganador o empate en grupos): <b>3 pts</b></li>
+				<li><b>Marcador exacto:</b> <b>+1 pt</b></li>
+				<li><b>Total de goles correcto:</b> <b>+1 pt</b></li>
+				<li><b>Diferencia de goles correcta:</b> <b>+1 pt</b></li>
 			</ul>
 			<p><b>Por Predicción Inicial:</b></p>
 			<ul>
-				<li>Cada equipo en su posición correcta de grupo</li>
-				<li>Bonus por grupo entero ordenado perfectamente</li>
-				<li>Por cada equipo que clasificó correctamente</li>
-				<li>Puntos extra por cada ronda eliminatoria alcanzada</li>
+				<li>Posición correcta en el grupo: <b>1 pt</b> por equipo</li>
+				<li>Grupo entero ordenado perfectamente (bonus): <b>+2 pts</b></li>
+				<li>Equipo que clasificó correctamente: <b>1 pt</b> por equipo</li>
+				<li>Equipo que llegó a Ronda de 32: <b>1 pt</b></li>
+				<li>Equipo que llegó a Octavos de final: <b>2 pts</b></li>
+				<li>Equipo que llegó a Cuartos de final: <b>3 pts</b></li>
+				<li>Equipo que llegó a Semifinales: <b>5 pts</b></li>
+				<li>Equipo que llegó a la Final: <b>8 pts</b></li>
+				<li>Campeón correcto: <b>13 pts</b></li>
 			</ul>
-			<p>Los desempates se resuelven por: más resultados exactos, más ganadores correctos, menor error de diferencia de goles, menos pronósticos enviados y última edición más temprana.</p>`
+			<p><b>Desempates (en orden):</b> más resultados exactos → más ganadores correctos → menor error de diferencia de goles → menos pronósticos enviados → última edición más temprana.</p>`
 		},
 		{
 			q: '¿Cómo cargo un pronóstico?',
