@@ -29,7 +29,7 @@
 			sub: 'Tu pronóstico del torneo completo — antes del primer partido'
 		},
 		{
-			href: '/leagues',
+			href: '/leagues/xqrbkeemb72nagv',
 			icon: Trophy,
 			title: 'Mirá las posiciones de los participantes',
 			sub: 'También podés revisar sus predicciones'
@@ -59,29 +59,6 @@
 			</a>
 		{/each}
 	</div>
-</section>
-
-<section class="card">
-	<div class="row">
-		<h3>Tus ligas</h3>
-		<div class="spacer"></div>
-		<a class="pill" href="/leagues">Administrar</a>
-	</div>
-	{#if !loaded}
-		<p class="muted">Cargando…</p>
-	{:else if leagues.length === 0}
-		<p class="muted">
-			Todavía no estás en ninguna liga. <a href="/leagues">Creá o unite a una →</a>
-		</p>
-	{:else}
-		{#each leagues as l (l.id)}
-			<a class="lrow" href={`/leagues/${l.id}`}>
-				<span>{l.name}</span>
-				<span class="spacer"></span>
-				<span class="cnt"><Users size={15} /> {l.members}</span>
-			</a>
-		{/each}
-	{/if}
 </section>
 </div>
 

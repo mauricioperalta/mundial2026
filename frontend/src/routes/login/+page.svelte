@@ -8,6 +8,7 @@
 	let error = $state('');
 	let busy = $state(false);
 	let showTerms = $state(false);
+	let showVideo = $state(false);
 
 	// Después de iniciar sesión, reanudar una invitación si venía en la URL.
 	let invite = $derived($page.url.searchParams.get('invite'));
@@ -97,7 +98,26 @@
 		¿No tenés una cuenta? <a href={registerHref} class="forgot">Registrate acá</a>
 	</p>
 	<p class="small muted center"><button class="link-btn" onclick={() => (showTerms = !showTerms)}>Ver términos y condiciones</button></p>
+	<p class="small muted center"><button class="video-btn" onclick={() => (showVideo = !showVideo)}>¿Vos estás hecho?</button></p>
 </div>
+
+{#if showVideo}
+<div class="overlay" onclick={() => (showVideo = false)}>
+	<div class="modal" onclick={(e) => e.stopPropagation()}>
+		<h2>¿Vos estás hecho?</h2>
+		<div class="video-wrap">
+			<iframe
+				src="https://www.youtube.com/embed/gTUmefFuBNg"
+				title="AudiMundial 2026"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen
+			></iframe>
+		</div>
+		<button class="btn" onclick={() => (showVideo = false)}>Cerrar</button>
+	</div>
+</div>
+{/if}
 
 {#if showTerms}
 <div class="overlay" onclick={() => (showTerms = false)}>
@@ -289,7 +309,7 @@
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
 		padding: 2rem;
-		max-width: 560px;
+		max-width: 900px;
 		width: 100%;
 		max-height: 90dvh;
 		display: flex;
@@ -352,7 +372,7 @@
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
 		padding: 2rem;
-		max-width: 560px;
+		max-width: 900px;
 		width: 100%;
 		max-height: 90dvh;
 		display: flex;
@@ -388,4 +408,27 @@
 		gap: 0.75rem;
 	}
 	.body p { margin: 0; }
+	.video-wrap {
+		width: 100%;
+		aspect-ratio: 16/9;
+		border-radius: var(--radius-sm);
+		overflow: hidden;
+	}
+	.video-wrap iframe {
+		width: 100%;
+		height: 100%;
+		border: none;
+	}
+	.video-btn {
+		background: none;
+		border: none;
+		color: var(--accent);
+		cursor: pointer;
+		font: inherit;
+		font-size: 1.7rem;
+		font-weight: 800;
+		text-decoration: underline;
+		padding: 0;
+		letter-spacing: 0.02em;
+	}
 </style>

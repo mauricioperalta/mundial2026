@@ -1,4 +1,4 @@
-import { House, Volleyball, Telescope, Network, Trophy } from '@lucide/svelte';
+import { House, Volleyball, Telescope, Network, Trophy, LifeBuoy } from '@lucide/svelte';
 import type { Component } from 'svelte';
 
 export interface NavItem {
@@ -12,7 +12,8 @@ export const navItems: NavItem[] = [
 	{ href: '/tips', label: 'Pronósticos', icon: Volleyball },
 	{ href: '/forecast', label: 'Predicción', icon: Telescope },
 	{ href: '/tournament', label: 'El Torneo', icon: Network },
-	{ href: '/leagues', label: 'Ligas', icon: Trophy }
+	{ href: '/leagues/xqrbkeemb72nagv', label: 'Resultados', icon: Trophy },
+	{ href: '/ayuda', label: 'Ayuda', icon: LifeBuoy }
 ];
 
 export function isActive(href: string, path: string): boolean {
