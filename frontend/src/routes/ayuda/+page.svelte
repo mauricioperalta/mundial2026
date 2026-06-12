@@ -73,6 +73,10 @@
 			a: `<p>Andá a <b>Ligas</b> en el menú y seleccioná la liga <b>Mundial 2026</b>. Ahí encontrarás la tabla de posiciones con todos los participantes ordenados por puntos. Podés filtrar por puntos totales, pronósticos o predicción.</p>`
 		},
 		{
+			q: '¿Cuándo se actualizan los resultados?',
+			a: `<p>Los resultados y puntajes se actualizan automáticamente unas <b>4 horas después</b> de cada partido. Esta demora se debe a que el sistema obtiene los datos de una fuente externa que publica los resultados una vez que el partido finaliza por completo, incluyendo el tiempo añadido, los entretiempos de hidratación y eventualmente el tiempo extra y los penales en fase eliminatoria.</p>`
+		},
+		{
 			q: '¿Qué pasa si hay un error en los resultados?',
 			a: `<p>Los resultados se obtienen de fuentes externas y se actualizan automáticamente cada 30 minutos. Si notás un error contactá a <a href="mailto:soporte@audired.com.ar">soporte@audired.com.ar</a> indicando el partido y el resultado correcto.</p>`
 		},
